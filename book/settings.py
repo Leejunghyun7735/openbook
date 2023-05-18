@@ -103,14 +103,19 @@ USE_TZ = True
 
 
 
-STATIC_URL = 'static/'
+# static/media (이미지파일 저장)
+STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = "/static/"
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=100), # 배포시 줄여서 
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=9000), # 배포시 줄여서 
     # ACCESS 토큰의 유효 기간 지정
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     # REFRESH 토큰의 유효기간 지정
